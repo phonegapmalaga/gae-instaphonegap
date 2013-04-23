@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="wrapper">
+
+  <header>
+    <div class="wrapper">
+      <h1>Instagap</h1>
+    </div>
+  </header>
+
+  <div id="main-content" class="wrapper">
+
+    <ul id="photos-list">
+      {% for upload in uploads %}
+      <li class="photo">
+        <img src="/img?img_id={{ upload.key()}} " alt="{{ upload.title }}"/>
+        <p>{{ upload.caption }}</p>
+      </li>
+      {% endfor %}
+     </ul>
+
+  </div>
+
+</div>
+
+{% endblock %}
